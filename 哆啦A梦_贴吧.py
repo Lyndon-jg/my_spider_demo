@@ -3,7 +3,6 @@ import urllib.parse
 import random
 from lxml import etree
 
-#tiezi_link://div[@class="threadlist_lz clearfix"]//a[@class="j_th_tit "]/@href
 
 def loadPage(url):
     """
@@ -65,6 +64,7 @@ def tiebaSpider(url, beginPage, endPage):
     """
     for page in range(beginPage, endPage + 1):
         pn = (page - 1) * 50
+        # 拼凑链接
         fullurl = url + '&pn=' + str(pn)
         loadPage(fullurl)
 
