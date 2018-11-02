@@ -25,6 +25,7 @@ def parse_html(html):
     html:网页源码 ，字符串类型
     return:作为一个迭代器返回每一个电影信息
     """
+	# 匹配模式
     pattern = re.compile(r'<dd>.*?board-index-.*?>(.*?)</i>.*?data-src="(.*?)".*?</a>.*?name.*?title="(.*?)".*?</a>.*?star.*?>(.*?)</p>.*?releasetime.*?>(.*?)</p>.*?integer.*?>(.*?)</i>.*?fraction.*?>(.*?)</i>', re.S)
     movies_info = re.findall(pattern=pattern, string=html)
     for movie_info in movies_info:
